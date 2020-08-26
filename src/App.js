@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
+import NavBar from './components/layout/Navbar';
+import UserItem from './components/users/UserItem';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello from React!</h1>
-    </div>
-  );
+class App extends Component{
+  render(){
+
+    return (
+      <div className="App">
+        <NavBar />
+        <UserItem/>
+      </div>
+    );
+  }  
 }
 
 export default App;
