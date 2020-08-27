@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
 
 export class Search extends Component {
     state = {
         text: ''
     };
     
+    static propTypes = {
+        searchUsers: PropTypes.func.isRequired
+    }
     onSubmit = (e) => {
         e.preventDefault();
-        console.log("hi there");
+        /*Send data up to App.js*/
+        this.props.searchUsers(this.state.text);    
+        this.setState({text: ''});
     }    
     //setting the state of e.target.name which handles the form field names
     onChange = (e) => {
